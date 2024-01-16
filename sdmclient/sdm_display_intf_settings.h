@@ -440,6 +440,8 @@ public:
   virtual DisplayError SetQsyncMode(uint64_t disp_id, QSyncMode mode) = 0;
 
   virtual DisplayError GetActiveBuiltinDisplay(uint64_t *disp_id) = 0;
+
+  virtual int GetDisplayConfigGroup(uint64_t display, DisplayConfigGroupInfo variable_config);
 };
 
 } // namespace sdm
