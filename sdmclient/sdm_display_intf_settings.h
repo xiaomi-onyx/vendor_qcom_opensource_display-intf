@@ -441,7 +441,11 @@ public:
 
   virtual DisplayError GetActiveBuiltinDisplay(uint64_t *disp_id) = 0;
 
-  virtual int GetDisplayConfigGroup(uint64_t display, DisplayConfigGroupInfo variable_config);
+  virtual int GetDisplayConfigGroup(uint64_t display, DisplayConfigGroupInfo variable_config) = 0;
+  
+  virtual DisplayError SetupVRRConfig(uint64_t display_id) = 0;
+
+  virtual int GetNotifyEptConfig(uint64_t display) = 0;
 };
 
 } // namespace sdm
