@@ -43,6 +43,7 @@ public:
   virtual const void *readInplace(uint32_t size) = 0;
   virtual uint32_t write(const void *data, uint32_t len) = 0;
   virtual uint32_t writeDupFileDescriptor(int fd) = 0;
+  virtual double readDouble() = 0;
 };
 
 } // namespace sdm

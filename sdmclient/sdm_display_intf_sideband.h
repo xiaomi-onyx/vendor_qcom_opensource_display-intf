@@ -27,6 +27,7 @@
 #define __SDM_DISPLAY_INTF_SIDEBAND_H__
 
 #include <core/sdm_types.h>
+#include <core/layer_buffer.h>
 
 #include "sdm_display_intf_parcel.h"
 
@@ -67,6 +68,8 @@ public:
   virtual int GetProperty(const char *property_name, char *value) = 0;
 
   virtual int GetProperty(const char *property_name, int *value) = 0;
+
+  virtual void Dump(uint32_t *out_size, char *out_buffer) = 0;
 
   virtual DisplayError NotifyCallback(uint32_t command, SDMParcel *input_parcel,
                                       SDMParcel *output_parcel) = 0;

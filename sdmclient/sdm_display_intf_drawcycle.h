@@ -188,20 +188,18 @@ public:
    * @exception: kErrorParameters if display_id is not found
    * @exception: kErrorNotSupported if the display isn't virtual
    */
-  virtual DisplayError
-  SetOutputBuffer(uint64_t display, SnapHandle &buffer,
-                  const shared_ptr<Fence> &release_fence) = 0;
+  virtual DisplayError SetOutputBuffer(uint64_t display, const SnapHandle *buffer,
+                              const shared_ptr<Fence> &release_fence) = 0;
 
   virtual DisplayError GetVsyncPeriod(uint64_t display_id,
                                       uint32_t *vsync_period) = 0;
 
   virtual void Refresh(uint64_t display_id);
 
-  virtual DisplayError SetClientTarget(uint64_t display, SnapHandle &target,
-                                       shared_ptr<Fence> acquire_fence,
-                                       int32_t dataspace,
-                                       const SDMRegion &damage,
-                                       uint32_t version) = 0;
+  virtual DisplayError SetClientTarget(uint64_t display, const SnapHandle *target,
+                            shared_ptr<Fence> acquire_fence, int32_t dataspace,
+                            const SDMRegion& damage, uint32_t version) = 0;
+
 
   virtual DisplayError CommitOrPrepare(uint64_t display, bool validate_only,
                                        shared_ptr<Fence> *out_retire_fence,

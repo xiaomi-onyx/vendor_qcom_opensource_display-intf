@@ -51,9 +51,8 @@ public:
 
   virtual DisplayError DestroyLayer(uint64_t display_id, int64_t layer_id) = 0;
 
-  virtual DisplayError
-  SetLayerBuffer(uint64_t display_id, int64_t layer_id, SnapHandle &buffer,
-                 const shared_ptr<Fence> &acquire_fence) = 0;
+  virtual DisplayError SetLayerBuffer(uint64_t display_id, int64_t layer_id, const SnapHandle *buffer,
+                             const shared_ptr<Fence> &acquire_fence) = 0;
 
   virtual DisplayError SetLayerBlendMode(uint64_t display_id, int64_t layer_id,
                                          int32_t int_mode) = 0;
