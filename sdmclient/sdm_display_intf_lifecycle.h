@@ -27,6 +27,7 @@
 #define __SDM_DISPLAY_INTF_LIFECYCLE_H__
 
 #include <core/display_interface.h>
+#include <core/socket_handler.h>
 #include <utils/fence.h>
 
 #include "sdm_compositor_cb_intf.h"
@@ -122,7 +123,8 @@ public:
   virtual DisplayError SetPowerMode(uint64_t display_id, int32_t int_mode) = 0;
 
   virtual DisplayError Init(SDMCompositorCbIntf *callback,
-                            BufferAllocator *buffer_allocator) = 0;
+                            BufferAllocator *buffer_allocator,
+                            SocketHandler *socket_handler) = 0;
 
   virtual void EnableCallback(bool enable) = 0;
 
