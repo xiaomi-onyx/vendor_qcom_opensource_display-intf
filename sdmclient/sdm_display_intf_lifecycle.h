@@ -43,7 +43,8 @@ public:
   SDMDisplayLifeCycleIntf() {}
   virtual ~SDMDisplayLifeCycleIntf(){};
 
-  virtual void RegisterSideBandCallback(SDMSideBandCompositorCbIntf *cb) = 0;
+  virtual void RegisterSideBandCallback(SDMSideBandCompositorCbIntf *cb,
+                                        bool enable) = 0;
 
   virtual void RegisterCompositorCallback(SDMCompositorCbIntf *cb, bool enable) = 0;
 
