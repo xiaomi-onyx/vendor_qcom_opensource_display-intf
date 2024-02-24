@@ -344,8 +344,7 @@ public:
 
   virtual DisplayError GetDisplayAttributes(uint64_t display_id,
                                             int32_t in_index,
-                                            DisplayConfigVariableInfo *ret,
-                                            uint32_t *group_id) = 0;
+                                            DisplayConfigVariableInfo *ret) = 0;
 
   /**
    * Get the VSync event state. The default state is disabled
