@@ -42,7 +42,9 @@ public:
   SDMDisplayLifeCycleIntf() {}
   virtual ~SDMDisplayLifeCycleIntf(){};
 
-  virtual void RegisterSideBandCallback(SDMSideBandCompositorCbIntf *cb);
+  virtual void RegisterSideBandCallback(SDMSideBandCompositorCbIntf *cb) = 0;
+
+  virtual void RegisterCompositorCallback(SDMCompositorCbIntf *cb, bool enable) = 0;
 
   /**
    * Create and initialize a display with SDM
@@ -122,11 +124,8 @@ public:
 
   virtual DisplayError SetPowerMode(uint64_t display_id, int32_t int_mode) = 0;
 
-  virtual DisplayError Init(SDMCompositorCbIntf *callback,
-                            BufferAllocator *buffer_allocator,
+  virtual DisplayError Init(BufferAllocator *buffer_allocator,
                             SocketHandler *socket_handler) = 0;
-
-  virtual void EnableCallback(bool enable) = 0;
 
   virtual bool IsDisplayConnected(uint64_t display_id) = 0;
 
