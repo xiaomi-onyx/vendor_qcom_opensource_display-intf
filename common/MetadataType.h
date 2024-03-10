@@ -1,4 +1,4 @@
-// Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+// Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 // SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #ifndef __COMMON_METADATATYPE_H__
@@ -343,6 +343,11 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
    * Functions supported: getMetadata
    */
   PIXEL_FORMAT_ALLOCATED = 10044,
+  /**
+   * Last buffer dequeue duration.
+   * Functions supported: getMetadata, setMetadata
+   */
+  BUFFER_DEQUEUE_DURATION = 10045,
 } vendor_qti_hardware_display_common_MetadataType;
 
 #endif  // __COMMON_METADATATYPE_H__
