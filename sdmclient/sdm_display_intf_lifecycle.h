@@ -30,6 +30,7 @@
 #include <core/socket_handler.h>
 #include <utils/fence.h>
 
+#include "debug_callback_intf.h"
 #include "sdm_compositor_cb_intf.h"
 #include "sdm_compositor_sideband_cb_intf.h"
 
@@ -125,7 +126,8 @@ public:
   virtual DisplayError SetPowerMode(uint64_t display_id, int32_t int_mode) = 0;
 
   virtual DisplayError Init(BufferAllocator *buffer_allocator,
-                            SocketHandler *socket_handler) = 0;
+                            SocketHandler *socket_handler,
+                            DebugCallbackIntf *debug_handler) = 0;
 
   virtual bool IsDisplayConnected(uint64_t display_id) = 0;
 
