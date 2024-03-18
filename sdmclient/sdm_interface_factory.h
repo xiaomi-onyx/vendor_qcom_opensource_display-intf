@@ -18,14 +18,14 @@
  */
 
 /*
- * Changes from Qualcomm Innovation Center are provided under the following license:
- *
+ * Changes from Qualcomm Innovation Center, Inc. are provided under the following license:
  * Copyright (c) 2022-2024 Qualcomm Innovation Center, Inc. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause-Clear
  */
 #ifndef __SDM_DISPLAY_INTERFACE_FACTORY_H__
 #define __SDM_DISPLAY_INTERFACE_FACTORY_H__
 
+#include "sdm_display_intf_aiqe.h"
 #include "sdm_display_intf_caps.h"
 #include "sdm_display_intf_drawcycle.h"
 #include "sdm_display_intf_layer_builder.h"
@@ -45,6 +45,7 @@ public:
   virtual SDMDisplayLifeCycleIntf *CreateLifeCycleIntf() = 0;
   virtual SDMDisplaySettingsIntf *CreateSettingsIntf() = 0;
   virtual SDMDisplaySideBandIntf *CreateSideBandIntf() = 0;
+  virtual SDMDisplayAiqeIntf *CreateAiqeIntf() = 0;
 };
 
 SDMInterfaceFactory *GetSDMInterfaceFactory();
