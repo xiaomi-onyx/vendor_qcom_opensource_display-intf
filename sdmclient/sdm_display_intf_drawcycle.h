@@ -238,6 +238,11 @@ public:
   virtual void LayerStackUpdated(uint64_t display) = 0;
 
   virtual void WaitForDrawCycleToComplete(uint64_t display) = 0;
+
+  virtual DisplayError NotifyExpectedPresent(uint64_t display, uint64_t expected_present_time,
+                                             uint32_t frame_interval_ns) = 0;
+
+  virtual DisplayError SetFrameIntervalNs(uint64_t display, uint32_t frame_interval_ns) = 0;
 };
 
 } // namespace sdm
