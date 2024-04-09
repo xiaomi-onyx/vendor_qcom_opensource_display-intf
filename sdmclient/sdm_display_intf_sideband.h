@@ -62,6 +62,8 @@ public:
   virtual DisplayError SetCameraSmoothInfo(SDMCameraSmoothOp op,
                                            int32_t fps) = 0;
 
+  virtual DisplayError SetContentFps(const std::string& name, int32_t fps) = 0;
+
   virtual DisplayError PostBuffer(const CwbConfig &cwb_config, void *buffer,
                                   int32_t display_type) = 0;
 

@@ -51,6 +51,8 @@ public:
   virtual void NotifyCWBStatus(int32_t status, void *buffer) = 0;
 
   virtual void OnHdmiHotplug(bool connected) = 0;
+
+  virtual void NotifyContentFps(const std::string& name, int32_t fps) = 0;
 };
 
 } // namespace sdm
