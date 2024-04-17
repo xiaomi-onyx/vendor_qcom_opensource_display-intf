@@ -46,6 +46,14 @@ public:
   virtual SDMDisplaySettingsIntf *CreateSettingsIntf() = 0;
   virtual SDMDisplaySideBandIntf *CreateSideBandIntf() = 0;
   virtual SDMDisplayAiqeIntf *CreateAiqeIntf() = 0;
+
+  virtual void DestroyCapsIntf() = 0;
+  virtual void DestroyDrawCycleIntf() = 0;
+  virtual void DestroyLifeCycleIntf() = 0;
+  virtual void DestroySideBandIntf() = 0;
+  virtual void DestroySettingsIntf() = 0;
+  virtual void DestroyAiqeIntf() = 0;
+  virtual void DestroyLayerBuilderIntf() = 0;
 };
 
 SDMInterfaceFactory *GetSDMInterfaceFactory();
