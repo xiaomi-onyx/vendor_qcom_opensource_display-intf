@@ -38,6 +38,11 @@ using std::shared_ptr;
 
 namespace sdm {
 
+enum CompositorSyncType {
+  CompositorSyncTypeAcquire,
+  CompositorSyncTypeRelease,
+};
+
 class SDMDisplayLifeCycleIntf {
 public:
   SDMDisplayLifeCycleIntf() {}
@@ -139,6 +144,8 @@ public:
 
   virtual DisplayError TryDrawMethod(Display display,
                                      DisplayDrawMethod drawMethod) = 0;
+
+  virtual void CompositorSync(CompositorSyncType syncType) = 0;
 };
 
 } // namespace sdm
