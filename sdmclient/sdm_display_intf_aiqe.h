@@ -62,6 +62,45 @@ public:
    */
   virtual DisplayError GetCoprStatus(uint64_t display_id,
                                      std::vector<int32_t> *copr_status) = 0;
+
+  /**
+   * Set the ABC state(enable/disable) on the given display
+   *
+   * @param display_id: The id of the specified display
+   * @param state: State to set for ABC. 1 for enable, 0 for disable
+   *
+   * @return: kErrorNone if transaction succeeded
+   *
+   * @exception: kErrorParameters if display_id is not found
+   * @exception: kErrorResources if the display doesn't support ABC
+   */
+  virtual DisplayError SetABCState(uint64_t display_id, bool state) = 0;
+
+  /**
+   * Reconfig the ABC on the given display
+   *
+   * @param display_id: The id of the specified display
+   *
+   * @return: kErrorNone if transaction succeeded
+   *
+   * @exception: kErrorParameters if display_id is not found
+   * @exception: kErrorResources if the display doesn't support ABC
+   */
+  virtual DisplayError SetABCReconfig(uint64_t display_id) = 0;
+
+  /**
+   * Set the ABC with given mode on the given display
+   *
+   * @param display_id: The id of the specified display
+   * @param mode_name: Mode name to be set to ABC
+   *
+   * @return: kErrorNone if transaction succeeded
+   *
+   * @exception: kErrorParameters if display_id is not found
+   * @exception: kErrorResources if the display doesn't support ABC
+   */
+  virtual DisplayError SetABCMode(uint64_t display_id,
+                                  std::string mode_name) = 0;
 };
 
 } // namespace sdm
