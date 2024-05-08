@@ -1,4 +1,4 @@
-// Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+// Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 // SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #ifndef __COMMON_BUFFERUSAGE_H__
@@ -107,6 +107,9 @@ typedef enum vendor_qti_hardware_display_common_BufferUsage {
 
   /* UBWC - 2:1 compression ratio */
   QTI_ALLOC_UBWC_L_2_TO_1 = 1L << 56,
+
+  /* UBWC - NV12 4R */
+  QTI_ALLOC_UBWC_4R = 1L << 57,
 } vendor_qti_hardware_display_common_BufferUsage;
 
 inline vendor_qti_hardware_display_common_BufferUsage operator|(
