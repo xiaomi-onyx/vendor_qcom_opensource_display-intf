@@ -184,6 +184,7 @@ typedef enum vendor_qti_hardware_display_common_PixelFormat {
   RAW_OPAQUE = 0x24,
   RAW10 = 0x25,
   RAW12 = 0x26,
+  RAW14 = 0x144,
   RGBA_1010102 = 0x2B,
   Y8 = 0x20203859,
   Y16 = 0x20363159,

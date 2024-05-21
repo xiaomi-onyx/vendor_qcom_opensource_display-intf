@@ -1,4 +1,4 @@
-// Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
+// Copyright (c) 2023-2024 Qualcomm Innovation Center, Inc. All rights reserved.
 // SPDX-License-Identifier: BSD-3-Clause-Clear
 
 #ifndef __COMMON_PIXELFORMATMODIFIER_H__
@@ -17,6 +17,7 @@ typedef enum vendor_qti_hardware_display_common_PixelFormatModifier {
   PIXEL_FORMAT_MODIFIER_TILED = 9,
   PIXEL_FORMAT_MODIFIER_ENCODEABLE = 10,
   PIXEL_FORMAT_MODIFIER_HEIF = 11,
+  PIXEL_FORMAT_MODIFIER_4R = 12,
 } vendor_qti_hardware_display_common_PixelFormatModifier;
 
 #endif  // __COMMON_PIXELFORMATMODIFIER_H__
