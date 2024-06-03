@@ -48,10 +48,10 @@ public:
   virtual DisplayError EnableCopr(uint64_t display_id, bool enable) = 0;
 
   /**
-   * Retrieve the COPR status on the given display
+   * Retrieve the COPR stats on the given display
    *
    * @param display_id: The id of the specified display
-   * @param copr_status: Vector to return the COPR status into
+   * @param copr_status: Vector to return the COPR stats into
    *
    * @return: kErrorNone if transaction succeeded
    *
@@ -60,7 +60,7 @@ public:
    * status
    * @exception: kErrorResources if the display doesn't support COPR
    */
-  virtual DisplayError GetCoprStatus(uint64_t display_id,
+  virtual DisplayError GetCoprStats(uint64_t display_id,
                                      std::vector<int32_t> *copr_status) = 0;
 
   /**
