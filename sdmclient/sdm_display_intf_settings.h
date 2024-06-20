@@ -445,6 +445,8 @@ public:
   virtual DisplayError SetupVRRConfig(uint64_t display_id) = 0;
 
   virtual int GetNotifyEptConfig(uint64_t display) = 0;
+
+  virtual DisplayError PerformCacConfig(uint64_t disp_id, CacConfig cac_config, bool enable) = 0;
 };
 
 } // namespace sdm
