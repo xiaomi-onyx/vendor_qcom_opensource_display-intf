@@ -39,21 +39,14 @@ class SDMInterfaceFactory {
 public:
   virtual ~SDMInterfaceFactory() {}
 
-  virtual SDMDisplayCapsIntf *CreateCapsIntf() = 0;
-  virtual SDMDisplayDrawCycleIntf *CreateDrawCycleIntf() = 0;
-  virtual SDMDisplayLayerBuilderIntf *CreateLayerBuilderIntf() = 0;
-  virtual SDMDisplayLifeCycleIntf *CreateLifeCycleIntf() = 0;
-  virtual SDMDisplaySettingsIntf *CreateSettingsIntf() = 0;
-  virtual SDMDisplaySideBandIntf *CreateSideBandIntf() = 0;
-  virtual SDMDisplayAiqeIntf *CreateAiqeIntf() = 0;
-
-  virtual void DestroyCapsIntf() = 0;
-  virtual void DestroyDrawCycleIntf() = 0;
-  virtual void DestroyLifeCycleIntf() = 0;
-  virtual void DestroySideBandIntf() = 0;
-  virtual void DestroySettingsIntf() = 0;
-  virtual void DestroyAiqeIntf() = 0;
-  virtual void DestroyLayerBuilderIntf() = 0;
+  virtual std::shared_ptr<SDMDisplayCapsIntf> CreateCapsIntf() = 0;
+  virtual std::shared_ptr<SDMDisplayDrawCycleIntf> CreateDrawCycleIntf() = 0;
+  virtual std::shared_ptr<SDMDisplayLayerBuilderIntf>
+  CreateLayerBuilderIntf() = 0;
+  virtual std::shared_ptr<SDMDisplayLifeCycleIntf> CreateLifeCycleIntf() = 0;
+  virtual std::shared_ptr<SDMDisplaySettingsIntf> CreateSettingsIntf() = 0;
+  virtual std::shared_ptr<SDMDisplaySideBandIntf> CreateSideBandIntf() = 0;
+  virtual std::shared_ptr<SDMDisplayAiqeIntf> CreateAiqeIntf() = 0;
 };
 
 SDMInterfaceFactory *GetSDMInterfaceFactory();
