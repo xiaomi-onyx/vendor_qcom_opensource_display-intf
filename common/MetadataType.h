@@ -348,6 +348,11 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
    * Functions supported: getMetadata, setMetadata
    */
   BUFFER_DEQUEUE_DURATION = 10045,
+  /**
+   * Anamorphic compression related information for the buffer.
+   * Functions supported: getMetadata, setMetadata
+   */
+  ANAMORPHIC_COMPRESSION_METADATA = 10046,
 } vendor_qti_hardware_display_common_MetadataType;
 
 #endif  // __COMMON_METADATATYPE_H__
