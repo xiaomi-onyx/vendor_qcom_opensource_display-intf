@@ -102,14 +102,15 @@ typedef enum vendor_qti_hardware_display_common_BufferUsage {
   /* Buffer used for trusted VM use case */
   QTI_PRIVATE_TRUSTED_VM = 1L << 53,
 
+  /* UBWC - NV12 4R */
+  QTI_ALLOC_UBWC_4R = 1L << 55,
+
   /* UBWC - 8:5 compression ratio */
-  QTI_ALLOC_UBWC_L_8_TO_5 = 1L << 55,
+  QTI_ALLOC_UBWC_L_8_TO_5 = 1L << 56,
 
   /* UBWC - 2:1 compression ratio */
-  QTI_ALLOC_UBWC_L_2_TO_1 = 1L << 56,
+  QTI_ALLOC_UBWC_L_2_TO_1 = 1L << 57,
 
-  /* UBWC - NV12 4R */
-  QTI_ALLOC_UBWC_4R = 1L << 57,
 } vendor_qti_hardware_display_common_BufferUsage;
 
 inline vendor_qti_hardware_display_common_BufferUsage operator|(
