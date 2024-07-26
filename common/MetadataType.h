@@ -57,14 +57,15 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
   DRM_PIXEL_FORMAT_MODIFIER = 8,
   /**
    * Usage of the buffer requested at allocation time.
-   * This is a bitmask with definitions in vendor_qti_hardware_display_common_BufferUsage
-   * This does not change for the lifetime of the buffer.
+   * This is a bitmask with definitions in
+   * vendor_qti_hardware_display_common_BufferUsage This does not change for the
+   * lifetime of the buffer.
    * Functions supported: getMetadata
    */
   USAGE = 9,
   /**
-   * Size in bytes of memory allocated for buffer, including metadata and padding.
-   * This does not change for the lifetime of the buffer.
+   * Size in bytes of memory allocated for buffer, including metadata and
+   * padding. This does not change for the lifetime of the buffer. 
    * Functions supported: getMetadata
    */
   ALLOCATION_SIZE = 10,
@@ -138,7 +139,8 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
    */
   PP_PARAM_INTERLACED = 10002,
   /**
-   * Set by camera to indicate buffer will be used for high performance video use case.
+   * Set by camera to indicate buffer will be used for high performance video
+   * use case. 
    * Functions supported: getMetadata, setMetadata
    */
   VIDEO_PERF_MODE = 10003,
@@ -170,7 +172,8 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
    */
   LINEAR_FORMAT = 10008,
   /**
-   * Set by graphics to indicate that this buffer will be written to but not swapped out.
+   * Set by graphics to indicate that this buffer will be written to but not
+   * swapped out. 
    * Functions supported: getMetadata, setMetadata
    */
   SINGLE_BUFFER_MODE = 10009,
@@ -221,8 +224,8 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
    */
   VIDEO_TS_INFO = 10019,
   /**
-   * Custom dimensions returns custom width of buffer with crop factored in (if crop is set)
-   * or interlaced height factored in for UBWC formats.
+   * Custom dimensions returns custom width of buffer with crop factored in (if
+   * crop is set) or interlaced height factored in for UBWC formats.
    * Functions supported: getMetadata
    */
   CUSTOM_DIMENSIONS_STRIDE = 10021,
@@ -236,8 +239,9 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
   RGB_DATA_ADDRESS = 10023,
   /**
    * Indicates buffer access permission for a client,
-   * where permissions are defined in vendor_qti_hardware_display_common_BufferPermission
-   * and clients are defined in vendor_qti_hardware_display_common_BufferClient
+   * where permissions are defined in
+   * vendor_qti_hardware_display_common_BufferPermission and clients are defined
+   * in vendor_qti_hardware_display_common_BufferClient 
    * Functions supported: getMetadata, setMetadata
    */
   BUFFER_PERMISSION = 10026,
@@ -270,7 +274,8 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
   EARLYNOTIFY_LINECOUNT = 10031,
   /**
    * Additional shared memory in buffer, outside of content and metadata,
-   * for client use. Defined in vendor_qti_hardware_display_common_ReservedRegion
+   * for client use. Defined in
+   * vendor_qti_hardware_display_common_ReservedRegion 
    * Functions supported: getMetadata
    */
   RESERVED_REGION = 10032,
@@ -353,6 +358,17 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
    * Functions supported: getMetadata, setMetadata
    */
   ANAMORPHIC_COMPRESSION_METADATA = 10046,
+  /**
+   * Default view for multi-view buffer
+   * Functions supported: getMetadata
+   */
+  BASE_VIEW = 10047,
+  /**
+   * All available views for multi-view buffer
+   * Functions supported: getMetadata
+   */
+  MULTI_VIEW_INFO = 10048,
+
 } vendor_qti_hardware_display_common_MetadataType;
 
 #endif  // __COMMON_METADATATYPE_H__
