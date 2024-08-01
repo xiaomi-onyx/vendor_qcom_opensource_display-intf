@@ -18,6 +18,7 @@ typedef enum vendor_qti_hardware_display_common_PixelFormatModifier {
   PIXEL_FORMAT_MODIFIER_ENCODEABLE = 10,
   PIXEL_FORMAT_MODIFIER_HEIF = 11,
   PIXEL_FORMAT_MODIFIER_4R = 12,
+  PIXEL_FORMAT_MODIFIER_EXPLICIT_UBWC = 13
 } vendor_qti_hardware_display_common_PixelFormatModifier;
 
 #endif  // __COMMON_PIXELFORMATMODIFIER_H__
