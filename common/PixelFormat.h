@@ -36,146 +36,146 @@
 
 #include <cstdint>
 
-typedef enum vendor_qti_hardware_display_common_PixelFormat {
+typedef enum vendor_qti_hardware_display_common_PixelFormat : uint32_t {
   // Range is 0x0 to 0x100 except for formats where fourcc code is used
   PIXEL_FORMAT_UNSPECIFIED = 0,
   /**
-     * RGBA_8888 format:
-     * Contains 1 plane in the following order -
-     * (A) RGBA plane
-     *
-     * <-------- RGB_Stride -------->
-     * <------- Width ------->
-     * R G B A R G B A R G B A . . . .  ^           ^
-     * R G B A R G B A R G B A . . . .  |           |
-     * R G B A R G B A R G B A . . . .  Height      |
-     * R G B A R G B A R G B A . . . .  |       RGB_Scanlines
-     * R G B A R G B A R G B A . . . .  |           |
-     * R G B A R G B A R G B A . . . .  |           |
-     * R G B A R G B A R G B A . . . .  |           |
-     * R G B A R G B A R G B A . . . .  V           |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              V
-     */
+   * RGBA_8888 format:
+   * Contains 1 plane in the following order -
+   * (A) RGBA plane
+   *
+   * <-------- RGB_Stride -------->
+   * <------- Width ------->
+   * R G B A R G B A R G B A . . . .  ^           ^
+   * R G B A R G B A R G B A . . . .  |           |
+   * R G B A R G B A R G B A . . . .  Height      |
+   * R G B A R G B A R G B A . . . .  |       RGB_Scanlines
+   * R G B A R G B A R G B A . . . .  |           |
+   * R G B A R G B A R G B A . . . .  |           |
+   * R G B A R G B A R G B A . . . .  |           |
+   * R G B A R G B A R G B A . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   */
   RGBA_8888 = 0x1,
   /**
-     * RGBX_8888 format:
-     * Contains 1 plane in the following order -
-     * (A) RGBX plane, where X is an unused component
-     *
-     * <-------- RGB_Stride -------->
-     * <------- Width ------->
-     * R G B X R G B X R G B X . . . .  ^           ^
-     * R G B X R G B X R G B X . . . .  |           |
-     * R G B X R G B X R G B X . . . .  Height      |
-     * R G B X R G B X R G B X . . . .  |       RGB_Scanlines
-     * R G B X R G B X R G B X . . . .  |           |
-     * R G B X R G B X R G B X . . . .  |           |
-     * R G B X R G B X R G B X . . . .  |           |
-     * R G B X R G B X R G B X . . . .  V           |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              V
-     */
+   * RGBX_8888 format:
+   * Contains 1 plane in the following order -
+   * (A) RGBX plane, where X is an unused component
+   *
+   * <-------- RGB_Stride -------->
+   * <------- Width ------->
+   * R G B X R G B X R G B X . . . .  ^           ^
+   * R G B X R G B X R G B X . . . .  |           |
+   * R G B X R G B X R G B X . . . .  Height      |
+   * R G B X R G B X R G B X . . . .  |       RGB_Scanlines
+   * R G B X R G B X R G B X . . . .  |           |
+   * R G B X R G B X R G B X . . . .  |           |
+   * R G B X R G B X R G B X . . . .  |           |
+   * R G B X R G B X R G B X . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   */
   RGBX_8888 = 0x2,
   /**
-     * RGB_888 format:
-     * Contains 1 plane in the following order -
-     * (A) RGB plane
-     *
-     * <-------- RGB_Stride -------->
-     * <------- Width ------->
-     * R G B R G B R G B R G B . . . .  ^           ^
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  Height      |
-     * R G B R G B R G B R G B . . . .  |       RGB_Scanlines
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  V           |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              V
-     */
+   * RGB_888 format:
+   * Contains 1 plane in the following order -
+   * (A) RGB plane
+   *
+   * <-------- RGB_Stride -------->
+   * <------- Width ------->
+   * R G B R G B R G B R G B . . . .  ^           ^
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  Height      |
+   * R G B R G B R G B R G B . . . .  |       RGB_Scanlines
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   */
   RGB_888 = 0x3,
   /**
-     * RGB_565 format:
-     * Contains 1 plane in the following order -
-     * (A) RGB plane
-     *
-     * <-------- RGB_Stride -------->
-     * <------- Width ------->
-     * R G B R G B R G B R G B . . . .  ^           ^
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  Height      |
-     * R G B R G B R G B R G B . . . .  |       RGB_Scanlines
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  |           |
-     * R G B R G B R G B R G B . . . .  V           |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              V
-     */
+   * RGB_565 format:
+   * Contains 1 plane in the following order -
+   * (A) RGB plane
+   *
+   * <-------- RGB_Stride -------->
+   * <------- Width ------->
+   * R G B R G B R G B R G B . . . .  ^           ^
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  Height      |
+   * R G B R G B R G B R G B . . . .  |       RGB_Scanlines
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  |           |
+   * R G B R G B R G B R G B . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   */
   RGB_565 = 0x4,
   /**
-     * BGRA_8888 format:
-     * Contains 1 plane in the following order -
-     * (A) BGRA plane
-     *
-     * <-------- RGB_Stride -------->
-     * <------- Width ------->
-     * B G R A B G R A B G R A . . . .  ^           ^
-     * B G R A B G R A B G R A . . . .  |           |
-     * B G R A B G R A B G R A . . . .  Height      |
-     * B G R A B G R A B G R A . . . .  |       RGB_Scanlines
-     * B G R A B G R A B G R A . . . .  |           |
-     * B G R A B G R A B G R A . . . .  |           |
-     * B G R A B G R A B G R A . . . .  |           |
-     * B G R A B G R A B G R A . . . .  V           |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              |
-     * . . . . . . . . . . . . . . . .              V
-     */
+   * BGRA_8888 format:
+   * Contains 1 plane in the following order -
+   * (A) BGRA plane
+   *
+   * <-------- RGB_Stride -------->
+   * <------- Width ------->
+   * B G R A B G R A B G R A . . . .  ^           ^
+   * B G R A B G R A B G R A . . . .  |           |
+   * B G R A B G R A B G R A . . . .  Height      |
+   * B G R A B G R A B G R A . . . .  |       RGB_Scanlines
+   * B G R A B G R A B G R A . . . .  |           |
+   * B G R A B G R A B G R A . . . .  |           |
+   * B G R A B G R A B G R A . . . .  |           |
+   * B G R A B G R A B G R A . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   */
   BGRA_8888 = 0x5,
-  YCBCR_422_SP = 0x10,  //  NV16
+  YCBCR_422_SP = 0x10, //  NV16
   /**
-     * YCrCb_420_SP format:
-	 * YUV 4:2:0 image with a plane of 8 bit Y samples followed
-	 * by an interleaved V/U plane containing 8 bit 2x2 subsampled
-	 * colour difference samples.
-	 *
-	 * <-------- Y/UV_Stride -------->
-	 * <------- Width ------->
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  ^           ^
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  Height      |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |          Y_Scanlines
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  V           |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              V
-	 * V U V U V U V U V U V U . . . .  ^
-	 * V U V U V U V U V U V U . . . .  |
-	 * V U V U V U V U V U V U . . . .  |
-	 * V U V U V U V U V U V U . . . .  UV_Scanlines
-	 * . . . . . . . . . . . . . . . .  |
-	 * . . . . . . . . . . . . . . . .  V
-	 * . . . . . . . . . . . . . . . .  --> Padding & Buffer size alignment
-	 *
-     */
-  YCrCb_420_SP = 0x11,  //  NV21
-  YCBCR_422_I = 0x14,   //  YUY2
+   * YCrCb_420_SP format:
+   * YUV 4:2:0 image with a plane of 8 bit Y samples followed
+   * by an interleaved V/U plane containing 8 bit 2x2 subsampled
+   * colour difference samples.
+   *
+   * <-------- Y/UV_Stride -------->
+   * <------- Width ------->
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  ^           ^
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  Height      |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |          Y_Scanlines
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   * V U V U V U V U V U V U . . . .  ^
+   * V U V U V U V U V U V U . . . .  |
+   * V U V U V U V U V U V U . . . .  |
+   * V U V U V U V U V U V U . . . .  UV_Scanlines
+   * . . . . . . . . . . . . . . . .  |
+   * . . . . . . . . . . . . . . . .  V
+   * . . . . . . . . . . . . . . . .  --> Padding & Buffer size alignment
+   *
+   */
+  YCrCb_420_SP = 0x11, //  NV21
+  YCBCR_422_I = 0x14,  //  YUY2
   RGBA_FP16 = 0x16,
   RAW16 = 0x20,
   BLOB = 0x21,
@@ -188,7 +188,7 @@ typedef enum vendor_qti_hardware_display_common_PixelFormat {
   RGBA_1010102 = 0x2B,
   Y8 = 0x20203859,
   Y16 = 0x20363159,
-  YV12 = 0x32315659,  //  YCrCb  4:2:0  Planar
+  YV12 = 0x32315659, //  YCrCb  4:2:0  Planar
   DEPTH_16 = 0x30,
   DEPTH_24 = 0x31,
   DEPTH_24_STENCIL_8 = 0x32,
@@ -196,88 +196,88 @@ typedef enum vendor_qti_hardware_display_common_PixelFormat {
   DEPTH_32F_STENCIL_8 = 0x34,
   STENCIL_8 = 0x35,
   /**
-     * YCBCR_P010 format:
-	 * YUV 4:2:0 image with a plane of 10 bit Y samples followed
-	 * by an interleaved U/V plane containing 10 bit 2x2 subsampled
-	 * colour difference samples.
-	 *
-	 * <-------- Y/UV_Stride -------->
-	 * <------- Width ------->
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  ^           ^
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  Height      |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |          Y_Scanlines
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  V           |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              V
-	 * U V U V U V U V U V U V . . . .  ^
-	 * U V U V U V U V U V U V . . . .  |
-	 * U V U V U V U V U V U V . . . .  |
-	 * U V U V U V U V U V U V . . . .  UV_Scanlines
-	 * . . . . . . . . . . . . . . . .  |
-	 * . . . . . . . . . . . . . . . .  V
-	 * . . . . . . . . . . . . . . . .  --> Buffer size alignment
-     *
-     */
+   * YCBCR_P010 format:
+   * YUV 4:2:0 image with a plane of 10 bit Y samples followed
+   * by an interleaved U/V plane containing 10 bit 2x2 subsampled
+   * colour difference samples.
+   *
+   * <-------- Y/UV_Stride -------->
+   * <------- Width ------->
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  ^           ^
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  Height      |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |          Y_Scanlines
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   * U V U V U V U V U V U V . . . .  ^
+   * U V U V U V U V U V U V . . . .  |
+   * U V U V U V U V U V U V . . . .  |
+   * U V U V U V U V U V U V . . . .  UV_Scanlines
+   * . . . . . . . . . . . . . . . .  |
+   * . . . . . . . . . . . . . . . .  V
+   * . . . . . . . . . . . . . . . .  --> Buffer size alignment
+   *
+   */
   YCBCR_P010 = 0x36,
   HSV_888 = 0x37,
   /* R8 format:
-	 * Contains 1 plane in the following order -
-	 * (A) R plane
-	 *
-	 * <-------- RGB_Stride -------->
-	 * <------- Width ------->
-	 * R R R R R R R R R R R R . . . .  ^           ^
-	 * R R R R R R R R R R R R . . . .  |           |
-	 * R R R R R R R R R R R R . . . .  Height      |
-	 * R R R R R R R R R R R R . . . .  |       RGB_Scanlines
-	 * R R R R R R R R R R R R . . . .  |           |
-	 * R R R R R R R R R R R R . . . .  |           |
-	 * R R R R R R R R R R R R . . . .  |           |
-	 * R R R R R R R R R R R R . . . .  V           |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              V
-     *
-     */
+   * Contains 1 plane in the following order -
+   * (A) R plane
+   *
+   * <-------- RGB_Stride -------->
+   * <------- Width ------->
+   * R R R R R R R R R R R R . . . .  ^           ^
+   * R R R R R R R R R R R R . . . .  |           |
+   * R R R R R R R R R R R R . . . .  Height      |
+   * R R R R R R R R R R R R . . . .  |       RGB_Scanlines
+   * R R R R R R R R R R R R . . . .  |           |
+   * R R R R R R R R R R R R . . . .  |           |
+   * R R R R R R R R R R R R . . . .  |           |
+   * R R R R R R R R R R R R . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   *
+   */
   R_8 = 0x38,
   RGBA_5551 = 0x6,
   RGBA_4444 = 0x7,
   /**
-     * YCbCr_420_SP format:
-	 * YUV 4:2:0 image with a plane of 8 bit Y samples followed
-	 * by an interleaved U/V plane containing 8 bit 2x2 subsampled
-	 * colour difference samples.
-	 *
-	 * <-------- Y/UV_Stride -------->
-	 * <------- Width ------->
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  ^           ^
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  Height      |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |          Y_Scanlines
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
-	 * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  V           |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              |
-	 * . . . . . . . . . . . . . . . .              V
-	 * U V U V U V U V U V U V . . . .  ^
-	 * U V U V U V U V U V U V . . . .  |
-	 * U V U V U V U V U V U V . . . .  |
-	 * U V U V U V U V U V U V . . . .  UV_Scanlines
-	 * . . . . . . . . . . . . . . . .  |
-	 * . . . . . . . . . . . . . . . .  V
-	 * . . . . . . . . . . . . . . . .  --> Padding & Buffer size alignment
-	 *
-     */
+   * YCbCr_420_SP format:
+   * YUV 4:2:0 image with a plane of 8 bit Y samples followed
+   * by an interleaved U/V plane containing 8 bit 2x2 subsampled
+   * colour difference samples.
+   *
+   * <-------- Y/UV_Stride -------->
+   * <------- Width ------->
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  ^           ^
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  Height      |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |          Y_Scanlines
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  |           |
+   * Y Y Y Y Y Y Y Y Y Y Y Y . . . .  V           |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              |
+   * . . . . . . . . . . . . . . . .              V
+   * U V U V U V U V U V U V . . . .  ^
+   * U V U V U V U V U V U V . . . .  |
+   * U V U V U V U V U V U V . . . .  |
+   * U V U V U V U V U V U V . . . .  UV_Scanlines
+   * . . . . . . . . . . . . . . . .  |
+   * . . . . . . . . . . . . . . . .  V
+   * . . . . . . . . . . . . . . . .  --> Padding & Buffer size alignment
+   *
+   */
   YCbCr_420_SP = 0x109,
   YCrCb_422_SP = 0x10B,
   RG_88 = 0x10E,
@@ -335,20 +335,18 @@ typedef enum vendor_qti_hardware_display_common_PixelFormat {
   COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR = 0x93DD,
 
   /* Legacy formats/currently unsupported
-  * R_16_UINT
-  * RG_1616_UINT
-  * RGBA_10101010
-  * RGB888_UBWC_FSC
-  * RGB101010_UBWC_FSC
-  * YCbCr_422_I_10BIT
-  * YCbCr_422_I_10BIT_COMPRESSED
-  * YCbCr_420_SP_4R_UBWC
-  **/
+   * R_16_UINT
+   * RG_1616_UINT
+   * RGBA_10101010
+   * RGB888_UBWC_FSC
+   * RGB101010_UBWC_FSC
+   * YCbCr_422_I_10BIT
+   * YCbCr_422_I_10BIT_COMPRESSED
+   * YCbCr_420_SP_4R_UBWC
+   **/
 
-  /* Explicit UBWC formats are removed - set UBWC flag with corresponding linear format
-   * YCbCr_420_SP_VENUS_UBWC
-   * YCbCr_420_P010_UBWC
-   * YCbCr_420_TP10_UBWC
+  /* Explicit UBWC formats are removed - set UBWC flag with corresponding linear
+   *format YCbCr_420_SP_VENUS_UBWC YCbCr_420_P010_UBWC YCbCr_420_TP10_UBWC
    **/
 
   /* To be deprecated when ExtenableTypes are plumbed */

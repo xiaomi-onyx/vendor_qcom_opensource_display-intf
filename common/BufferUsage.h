@@ -5,7 +5,7 @@
 #define __COMMON_BUFFERUSAGE_H__
 
 #include <cstdint>
-typedef enum vendor_qti_hardware_display_common_BufferUsage {
+typedef enum vendor_qti_hardware_display_common_BufferUsage : uint64_t {
   /** Bit 0-3 is an enum */
   CPU_READ_MASK = 0xf,
   /** Buffer is never read by CPU */
@@ -51,9 +51,9 @@ typedef enum vendor_qti_hardware_display_common_BufferUsage {
   /** Buffer is used as a sensor direct report output */
   SENSOR_DIRECT_DATA = 1 << 23,
   /**
-     * Buffer is used as as an OpenGL shader storage or uniform
-     * buffer object
-     */
+   * Buffer is used as as an OpenGL shader storage or uniform
+   * buffer object
+   */
   GPU_DATA_BUFFER = 1 << 24,
   /** Buffer is used as a cube map texture */
   GPU_CUBE_MAP = 1 << 25,
@@ -66,51 +66,53 @@ typedef enum vendor_qti_hardware_display_common_BufferUsage {
   QTI_ALLOC_UBWC = 1 << 28,
 
   /**
-     * Buffer is allocated with uncached memory (using O_DSYNC),
-     * cannot be used with noncontiguous heaps
-     */
+   * Buffer is allocated with uncached memory (using O_DSYNC),
+   * cannot be used with noncontiguous heaps
+   */
   QTI_PRIVATE_UNCACHED = 1 << 29,
 
   /* Buffer has a 10 bit format if format is implementation defined */
   QTI_PRIVATE_10BIT = 1 << 30,
 
   /* Buffer is used for secure display */
-  QTI_PRIVATE_SECURE_DISPLAY = 1L << 31,
+  QTI_PRIVATE_SECURE_DISPLAY = 1ULL << 31,
 
   /* Buffer is used for front-buffer rendering */
-  FRONT_BUFFER = 1L << 32,
+  FRONT_BUFFER = 1ULL << 32,
 
   /* Bits 33-47 must be zero and are reserved for future versions
-     * Bits 48-63 are reserved for vendor extensions
-     */
+   * Bits 48-63 are reserved for vendor extensions
+   */
 
   /* This flag is used to indicate video NV21 format */
-  QTI_PRIVATE_VIDEO_NV21_ENCODER = 1L << 48,
+  QTI_PRIVATE_VIDEO_NV21_ENCODER = 1ULL << 48,
 
   /* Buffer uses PI format */
-  QTI_PRIVATE_ALLOC_UBWC_PI = 1L << 49,
+  QTI_PRIVATE_ALLOC_UBWC_PI = 1ULL << 49,
 
   /* Buffer is accessed by CDSP */
-  QTI_PRIVATE_CDSP = 1L << 50,
+  QTI_PRIVATE_CDSP = 1ULL << 50,
 
   /* Buffer is used for WFD */
-  QTI_PRIVATE_WFD = 1L << 51,
+  QTI_PRIVATE_WFD = 1ULL << 51,
 
   /* Buffer uses video HW use case  */
-  QTI_PRIVATE_VIDEO_HW = 1L << 52,
+  QTI_PRIVATE_VIDEO_HW = 1ULL << 52,
 
   /* Buffer used for trusted VM use case */
-  QTI_PRIVATE_TRUSTED_VM = 1L << 53,
+  QTI_PRIVATE_TRUSTED_VM = 1ULL << 53,
 
   /* UBWC - NV12 4R */
-  QTI_ALLOC_UBWC_4R = 1L << 55,
+  QTI_ALLOC_UBWC_4R = 1ULL << 55,
 
   /* UBWC - 8:5 compression ratio */
-  QTI_ALLOC_UBWC_L_8_TO_5 = 1L << 56,
+  QTI_ALLOC_UBWC_L_8_TO_5 = 1ULL << 56,
 
   /* UBWC - 2:1 compression ratio */
-  QTI_ALLOC_UBWC_L_2_TO_1 = 1L << 57,
+  QTI_ALLOC_UBWC_L_2_TO_1 = 1ULL << 57,
 
+  /* This flag is used to indicate multiview use case */
+  QTI_PRIVATE_MULTI_VIEW_INFO = 1ULL << 58,
 } vendor_qti_hardware_display_common_BufferUsage;
 
 inline vendor_qti_hardware_display_common_BufferUsage operator|(
