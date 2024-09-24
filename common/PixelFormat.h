@@ -297,6 +297,7 @@ typedef enum vendor_qti_hardware_display_common_PixelFormat : uint32_t {
   BGRX_1010102 = 0x11C,
   XBGR_2101010 = 0x11D,
   TP10 = 0x7FA30C09,
+  YCBCR_P210 = 0x3c,
 
   CbYCrY_422_I = 0x120,
   BGR_888 = 0x121,
