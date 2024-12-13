@@ -368,6 +368,16 @@ typedef enum vendor_qti_hardware_display_common_MetadataType {
    * Functions supported: getMetadata
    */
   MULTI_VIEW_INFO = 10048,
+ /**
+   * Three Dimensional Reference Display Info
+   * Functions supported: getMetadata, setMetadata
+   */
+  THREE_DIMENSIONAL_REF_INFO = 10049,
+  /**
+   * SMPTE2094_10 metadata,
+   * Functions supported: getMetadata, setMetadata
+   */
+  SMPTE2094_10 = 10050,
 
 } vendor_qti_hardware_display_common_MetadataType;
 
