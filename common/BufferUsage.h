@@ -115,6 +115,8 @@ typedef enum vendor_qti_hardware_display_common_BufferUsage : uint64_t {
 
   /* UBWC - 8:5 compression ratio */
   QTI_ALLOC_UBWC_L_8_TO_5 = 1ULL << 59,
+
+  /* Bit 60 is reserved */
 } vendor_qti_hardware_display_common_BufferUsage;
 
 inline vendor_qti_hardware_display_common_BufferUsage operator|(
