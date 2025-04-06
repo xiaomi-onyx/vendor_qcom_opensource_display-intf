@@ -364,6 +364,13 @@ typedef enum vendor_qti_hardware_display_common_PixelFormat : uint32_t {
   NV12_UBWC_FLEX_2_BATCH = 0x128,
   NV12_UBWC_FLEX_4_BATCH = 0x129,
   NV12_UBWC_FLEX_8_BATCH = 0x130,
+
+  /* Camera MipMap Formats */
+  NV12_UBWC_MIPMAP = 0x223,
+  NV12_MIPMAP = 0x224,
+  TP10_UBWC_MIPMAP = 0x225,
+  P010_MIPMAP = 0x226,
+
   /* --------------------------------------------------------------------------------*/
 
 } vendor_qti_hardware_display_common_PixelFormat;
